@@ -1,7 +1,7 @@
 const ver = "V666";
 
 let device = {
-    mobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone|Mobile|Tablet|Kindle|Silk|PlayBook|BB10/i.test(navigator.userAgent),
+    mobile: /Andid|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone|Mobile|Tablet|Kindle|Silk|PlayBook|BB10/i.test(navigator.userAgent),
     apple: /iPhone|iPad|iPod|Macintosh|Mac OS X/i.test(navigator.userAgent)
 };
 
