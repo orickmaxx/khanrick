@@ -1,4 +1,4 @@
-const ver = "V1.1";
+const ver = "V24.04.2024";
 
 let device = {
     mobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone|Mobile|Tablet|Kindle|Silk|PlayBook|BB10/i.test(navigator.userAgent),
@@ -65,7 +65,7 @@ const findAndClickByClass = className => { const element = document.querySelecto
 
 function sendToast(text, duration=5000, gravity='bottom') { Toastify({ text: text, duration: duration, gravity: gravity, position: "center", stopOnFocus: true, style: { background: "#000000" } }).showToast(); };
 
-async function showSplashScreen() { splashScreen.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000;display:flex;align-items:center;justify-content:center;z-index:9999;opacity:0;transition:opacity 0.5s ease;user-select:none;color:white;font-family:MuseoSans,sans-serif;font-size:30px;text-align:center;"; splashScreen.innerHTML = '<span style="color:white;">💍| @miihborgs</span>'; document.body.appendChild(splashScreen); setTimeout(() => splashScreen.style.opacity = '1', 10);};
+async function showSplashScreen() { splashScreen.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000;display:flex;align-items:center;justify-content:center;z-index:9999;opacity:0;transition:opacity 0.5s ease;user-select:none;color:white;font-family:MuseoSans,sans-serif;font-size:30px;text-align:center;"; splashScreen.innerHTML = '<span style="color:white;">💍</span><span style="color:#a020f0;"> @miihborgs</span>'; document.body.appendChild(splashScreen); setTimeout(() => splashScreen.style.opacity = '1', 10);};
 async function hideSplashScreen() { splashScreen.style.opacity = '0'; setTimeout(() => splashScreen.remove(), 1000); };
 
 async function loadScript(url, label) { return fetch(url).then(response => response.text()).then(script => { loadedPlugins.push(label); eval(script); }); }
@@ -225,22 +225,7 @@ function setupMenu() {
         document.onmousemove = e => { if (isDragging) { Object.assign(statsPanel.style, { left: `${Math.max(0, Math.min(e.clientX - offsetX, window.innerWidth - statsPanel.offsetWidth))}px`, top: `${Math.max(0, Math.min(e.clientY - offsetY, window.innerHeight - statsPanel.offsetHeight))}px` }); }};
         if(device.mobile) plppdo.on('domChanged', () => window.location.href.includes("khanacademy.org/profile") ? statsPanel.style.display = 'flex' : statsPanel.style.display = 'none' );
     }
-    function loadWidgetBot() {
-        if(device.mobile)  return;
-        const script = Object.assign(document.createElement('script'), {
-            src: 'https://cdn.jsdelivr.net/npm/@widgetbot/crate@3',
-            async: true,
-            onload: () => {
-                const discEmbed = new Crate({ server: '1286573512831533056', channel: '1286573601687867433',
-                    location: ['bottom', 'right'], notifications: true, indicator: true, allChannelNotifications: true,
-                    defer: false, color: '#000000'
-                });
-                plppdo.on('domChanged', () => window.location.href.includes("khanacademy.org/profile") ? discEmbed.show() : discEmbed.hide() );
-            }
-        });
-        document.body.appendChild(script);
-    }
-    setupWatermark(); setupDropdown(); setupStatusPanel(); loadWidgetBot();
+    setupWatermark(); setupDropdown(); setupStatusPanel();
 }
 
 /* Main Functions */ 
@@ -397,7 +382,7 @@ function setupMain(){
 }
 
 /* Inject */
-if (!/^https?:\/\/pt\.khanacademy\.org/.test(window.location.href)) { alert("❌ Khanrick Failed to Injected!\n\nVocê precisa executar o Khanrick no site do Khan Academy! (https://pt.khanacademy.org/)"); window.location.href = "https://pt.khanacademy.org/";};
+if (!/^https?:\/\/pt\.khanacademy\.org/.test(window.location.href)) { alert("❌ Khanrick Failed to Injected!\n\nVocê precisa executar o Khanrick no site do Khan Academy! (https://pt.khanacademy.org/"); window.location.href = "https://pt.khanacademy.org/";};
 
 showSplashScreen();
 
