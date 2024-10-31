@@ -36,7 +36,7 @@ window.features = {
     rgbLogo: false
 };
 window.featureConfigs = {
-    autoAnswerDelay: 3,
+    autoAnswerDelay: 1,
     customUsername: "",
     customPfp: ""
 };
