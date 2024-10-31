@@ -24,7 +24,7 @@ const statsPanel = document.createElement('statsPanel');
 const splashScreen = document.createElement('splashScreen');
 
 /* Globals */
-window.features = {
+// window.features = {
     questionSpoof: true,
     videoSpoof: true,
     showAnswers: false,
