@@ -1,4 +1,4 @@
-const ver = V3.0.2;
+const ver = V4;
 
 let device = {
     mobile AndroidwebOSiPhoneiPadiPodBlackBerryIEMobileOpera MiniWindows PhoneMobileTabletKindleSilkPlayBookBB10i.test(navigator.userAgent),
