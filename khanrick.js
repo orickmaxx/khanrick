@@ -1,8 +1,8 @@
 const ver = V4;
 
 let device = {
-    mobile AndroidwebOSiPhoneiPadiPodBlackBerryIEMobileOpera MiniWindows PhoneMobileTabletKindleSilkPlayBookBB10i.test(navigator.userAgent),
-    apple iPhoneiPadiPodMacintoshMac OS Xi.test(navigator.userAgent)
+    mobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone|Mobile|Tablet|Kindle|Silk|PlayBook|BB10/i.test(navigator.userAgent),
+    apple: /iPhone|iPad|iPod|Macintosh|Mac OS X/i.test(navigator.userAgent)
 };
 
  User 
