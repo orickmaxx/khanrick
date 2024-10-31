@@ -170,16 +170,16 @@ function setupMenu() {
         let featuresList = [
             [{ name: 'questionSpoof', type: 'checkbox', variable: 'features.questionSpoof', attributes: 'checked', labeled: true, label: 'Question Spoof' },
             { name: 'videoSpoof', type: 'checkbox', variable: 'features.videoSpoof', attributes: 'checked', labeled: true, label: 'Video Spoof' },
-            { name: 'showAnswers', type: 'checkbox', variable: 'features.showAnswers', labeled: true, label: 'Answer Revealer' }],
-            [{ name: 'autoAnswer', type: 'checkbox', variable: 'features.autoAnswer', dependent: 'autoAnswerDelay,nextRecomendation,repeatQuestion', labeled: true, label: 'Auto Answer' },
-            { name: 'repeatQuestion', className: 'repeatQuestion', type: 'checkbox', variable: 'features.repeatQuestion', attributes: 'style="display:none;"', labeled: true, label: 'Repeat Question' },
-            { name: 'nextRecomendation', className: 'nextRecomendation', type: 'checkbox', variable: 'features.nextRecomendation', attributes: 'style="display:none;"', labeled: true, label: 'Recomendations' },
+            { name: 'showAnswers', type: 'checkbox', variable: 'features.showAnswers', labeled: true, label: 'Revelar' }],
+            [{ name: 'autoAnswer', type: 'checkbox', variable: 'features.autoAnswer', dependent: 'autoAnswerDelay,nextRecomendation,repeatQuestion', labeled: true, label: 'Auto Responder' },
+            { name: 'repeatQuestion', className: 'repeatQuestion', type: 'checkbox', variable: 'features.repeatQuestion', attributes: 'style="display:none;"', labeled: true, label: 'Repetir Questão' },
+            { name: 'nextRecomendation', className: 'nextRecomendation', type: 'checkbox', variable: 'features.nextRecomendation', attributes: 'style="display:none;"', labeled: true, label: 'Recomendação' },
             { name: 'autoAnswerDelay', className: 'autoAnswerDelay', type: 'range', variable: 'features.autoAnswerDelay', attributes: 'style="display:none;" min="1" max="3" value="1"', labeled: false }],
-            [{ name: 'minuteFarm', type: 'checkbox', variable: 'features.minuteFarmer', labeled: true, label: 'Minute Farmer' },
-            { name: 'customBanner', type: 'checkbox', variable: 'features.customBanner', labeled: true, label: 'Custom Banner' },
-            { name: 'rgbLogo', type: 'checkbox', variable: 'features.rgbLogo', labeled: true, label: 'RGB Logo' }],
-            [{ name: 'darkMode', type: 'checkbox', variable: 'features.darkMode', attributes: 'checked', labeled: true, label: 'Dark Mode' },
-            { name: 'onekoJs', type: 'checkbox', variable: 'features.onekoJs', labeled: true, label: 'onekoJs' }]
+            [{ name: 'minuteFarm', type: 'checkbox', variable: 'features.minuteFarmer', labeled: true, label: 'Farmar Minutos' },
+            { name: 'customBanner', type: 'checkbox', variable: 'features.customBanner', labeled: true, label: 'Banner Customizado' },
+            { name: 'rgbLogo', type: 'checkbox', variable: 'features.rgbLogo', labeled: true, label: 'Logo RGB' }],
+            [{ name: 'darkMode', type: 'checkbox', variable: 'features.darkMode', attributes: 'checked', labeled: true, label: 'Modo Dark' },
+            { name: 'onekoJs', type: 'checkbox', variable: 'features.onekoJs', labeled: true, label: 'MIAU' }]
         ]
         if (!device.apple) {
             featuresList.push(
@@ -225,22 +225,7 @@ function setupMenu() {
         document.onmousemove = e => { if (isDragging) { Object.assign(statsPanel.style, { left: `${Math.max(0, Math.min(e.clientX - offsetX, window.innerWidth - statsPanel.offsetWidth))}px`, top: `${Math.max(0, Math.min(e.clientY - offsetY, window.innerHeight - statsPanel.offsetHeight))}px` }); }};
         if(device.mobile) plppdo.on('domChanged', () => window.location.href.includes("khanacademy.org/profile") ? statsPanel.style.display = 'flex' : statsPanel.style.display = 'none' );
     }
-    function loadWidgetBot() {
-        if(device.mobile)  return;
-        const script = Object.assign(document.createElement('script'), {
-            src: 'https://cdn.jsdelivr.net/npm/@widgetbot/crate@3',
-            async: true,
-            onload: () => {
-                const discEmbed = new Crate({ server: '1286573512831533056', channel: '1286573601687867433',
-                    location: ['bottom', 'right'], notifications: true, indicator: true, allChannelNotifications: true,
-                    defer: false, color: '#000000'
-                });
-                plppdo.on('domChanged', () => window.location.href.includes("khanacademy.org/profile") ? discEmbed.show() : discEmbed.hide() );
-            }
-        });
-        document.body.appendChild(script);
-    }
-    setupWatermark(); setupDropdown(); setupStatusPanel(); loadWidgetBot();
+    setupWatermark(); setupDropdown(); setupStatusPanel();
 }
 
 /* Main Functions */ 
@@ -397,7 +382,7 @@ function setupMain(){
 }
 
 /* Inject */
-if (!/^https?:\/\/pt\.khanacademy\.org/.test(window.location.href)) { alert("❌ Khanrick Failed to Injected!\n\nVocê precisa executar o Khanrick no site do Khan Academy! (https://pt.khanacademy.org/)"); window.location.href = "https://pt.khanacademy.org/";};
+if (!/^https?:\/\/pt\.khanacademy\.org/.test(window.location.href)) { alert("❌ Khanrick Failed to Injected!\n\nVocê precisa executar o Khanrick no site do Khan Academy! (https://pt.khanacademy.org/"); window.location.href = "https://pt.khanacademy.org/";};
 
 showSplashScreen();
 
