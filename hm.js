@@ -28,7 +28,7 @@ window.features = {
     questionSpoof: true,
     videoSpoof: true,
     showAnswers: false,
-    autoAnswer: true,
+    autoAnswer: false,
     customBanner: false,
     nextRecomendation: false,
     repeatQuestion: false,
@@ -36,7 +36,7 @@ window.features = {
     rgbLogo: false
 };
 window.featureConfigs = {
-    autoAnswerDelay: 1,
+    autoAnswerDelay: 3,
     customUsername: "",
     customPfp: ""
 };
@@ -171,7 +171,7 @@ function setupMenu() {
             [{ name: 'questionSpoof', type: 'checkbox', variable: 'features.questionSpoof', attributes: 'checked', labeled: true, label: 'Question Spoof' },
             { name: 'videoSpoof', type: 'checkbox', variable: 'features.videoSpoof', attributes: 'checked', labeled: true, label: 'Video Spoof' },
             { name: 'showAnswers', type: 'checkbox', variable: 'features.showAnswers', labeled: true, label: 'Revelar' }],
-            [{ name: 'autoAnswer', type: 'checkbox', variable: 'features.autoAnswer', attributes: 'checked', dependent: 'autoAnswerDelay,nextRecomendation,repeatQuestion', labeled: true, label: 'Auto Responder' },
+            [{ name: 'autoAnswer', type: 'checkbox', variable: 'features.autoAnswer', dependent: 'autoAnswerDelay,nextRecomendation,repeatQuestion', labeled: true, label: 'Auto Responder' },
             { name: 'repeatQuestion', className: 'repeatQuestion', type: 'checkbox', variable: 'features.repeatQuestion', attributes: 'style="display:none;"', labeled: true, label: 'Repetir Questão' },
             { name: 'nextRecomendation', className: 'nextRecomendation', type: 'checkbox', variable: 'features.nextRecomendation', attributes: 'style="display:none;"', labeled: true, label: 'Recomendação' },
             { name: 'autoAnswerDelay', className: 'autoAnswerDelay', type: 'range', variable: 'features.autoAnswerDelay', attributes: 'style="display:none;" min="1" max="3" value="1"', labeled: false }],
@@ -231,7 +231,7 @@ function setupMenu() {
 /* Main Functions */ 
 function setupMain(){
     function spoofQuestion() {
-        const phrases = [ "🔥 Get good, get [KhanRick](https://github.com/orickmaxx/khanrick/)!", "🤍 Made by [@orickmaxx](https://www.instagram.com/orickmaxx/).", "☄️ By github.com/orickmaxx/khanrick/ " ];
+        const phrases = [ "🔥 Get good, get [KhanRick](https://github.com/orickmaxx/khanrick/)!", "🤍 Made by [@orickmaxx](https://www.instagram.com/orickmaxx/).", "☄️ By [orickmaxx] (https://github.com/orickmaxx/khanrick/) " ];
         const originalFetch = window.fetch;
         window.fetch = async function (input, init) {
             let body;
