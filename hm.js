@@ -231,7 +231,7 @@ function setupMenu() {
 /* Main Functions */ 
 function setupMain(){
     function spoofQuestion() {
-        const phrases = [ "🔥 Get good, get [KhanRick](https://github.com/orickmaxx/khanrick/)!", "🤍 Made by [@orickmaxx](https://www.instagram.com/orickmaxx/).", "☄️ By [orickmaxx] (https://github.com/orickmaxx/khanrick/) " ];
+        const phrases = [ "🔥 Get good, get [KhanRick](https://github.com/orickmaxx/khanrick/)!", "🤍 Made by [@orickmaxx](https://www.instagram.com/orickmaxx/).", "☄️ By [@orickmaxx](https://github.com/orickmaxx/khanrick/)!" ];
         const originalFetch = window.fetch;
         window.fetch = async function (input, init) {
             let body;
