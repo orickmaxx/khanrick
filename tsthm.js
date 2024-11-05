@@ -220,7 +220,7 @@ function setupMenu() {
 /* Main Functions */ 
 function setupMain(){
     function spoofQuestion() {
-        const phrases = [ "🔥 Get good, get [KhanRick](https://github.com/orickmaxx/khanrick/)!", "🤍 Made by [@orickmaxx](https://www.instagram.com/orickmaxx/).", "☄️ By [@orickmaxx](https://github.com/orickmaxx/khanrick/)!" ];
+        const phrases = [ "🔥 Get good, get [KhanRick](https://github.com/orickmaxx/khanrick/)!", "🤍 Made by [@orickmaxx](https://www.instagram.com/orickmaxx/)." ];
         const originalFetch = window.fetch;
         window.fetch = async function (input, init) {
             let body;
@@ -286,7 +286,7 @@ function setupMain(){
     function spoofUser() {
         plppdo.on('domChanged', () => {
             if(!device.apple){;
-                if (nicknameElement) nicknameElement.textContent = user.nickname; 
+                if (nicknameElement) nicknameElement.textContent = featureConfigs.customUsername || user.nickname; 
             }
         });
     }
@@ -342,7 +342,7 @@ function setupMain(){
         })
     }
     function changeBannerText() {
-        const phrases = [ "[🎅] Non Skeetless dude.", "[🎅] Khanrick on top.", "[🎅] Nix said hello!", "[🎅] God i wish i had Khanrick.", "[🎅] Get good get Khanrick!", "[🎅] the old khanrick.space" ];
+        const phrases = [ "[🎅] FELIZ NATAL!.", "[🎅] Khanrick no topo.", "[🎅] Biscoito Com Leite", "[🎅] THE GOAT Khanrick.", "[🎅] Tenha o melhor, Tenha Khanrick!", "[🎅] PAPAI NOEL, É VOCÊ?" ];
         setInterval(() => { 
             const greeting = document.querySelector('.stp-animated-banner h2');
             if (greeting&&features.customBanner) greeting.textContent = phrases[Math.floor(Math.random() * phrases.length)];
