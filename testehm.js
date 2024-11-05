@@ -10,7 +10,7 @@ let device = {
 // This will not change automatically.
 let user = {
     username: "Username",
-    nickname: "🎅|@ORICKMAXX",
+    nickname: "🎅 | @ORICKMAXX",
     UID: 0
 }
 
@@ -37,7 +37,6 @@ window.features = {
 };
 window.featureConfigs = {
     autoAnswerDelay: 3,
-    customUsername: "",
     customPfp: ""
 };
 
@@ -73,7 +72,7 @@ async function loadCss(url) { return new Promise((resolve) => { const link = doc
 
 /* Visual Functions */
 function setupMenu() {
-    const setFeatureByPath = (path, value) => { let obj = window; const parts = path.split('.'); while (parts.length > 1) obj = obj[parts.shift()]; obj[parts[0]] = value; }
+    const setFeatureByPath = (path, value) => { let obj = window; const parts = path.split('.'); while (parts.length > 1) obj = parts.shift(); obj[parts[0]] = value; }
     function addFeature(features) {
         features.forEach(elements => {
             const feature = document.createElement('feature');
@@ -180,20 +179,11 @@ function setupMenu() {
             { name: 'rgbLogo', type: 'checkbox', variable: 'features.rgbLogo', labeled: true, label: 'Logo RGB' }],
             [{ name: 'darkMode', type: 'checkbox', variable: 'features.darkMode', attributes: 'checked', labeled: true, label: 'Modo Dark' },
             { name: 'onekoJs', type: 'checkbox', variable: 'features.onekoJs', labeled: true, label: 'MIAU' }]
-        ]
-        if (!device.apple) {
-            featuresList.push(
-                [{ name: 'Custom Username', type: 'nonInput' }, { name: 'customName', type: 'text', variable: 'featureConfigs.customUsername', attributes: 'autocomplete="off"' }],
-                [{ name: 'Custom pfp', type: 'nonInput' }, { name: 'customPfp', type: 'text', variable: 'featureConfigs.customPfp', attributes: 'autocomplete="off"' }]
-            );
-        }
+        ];
         featuresList.push([{ name: `${user.username} - UID: ${user.UID}`, type: 'nonInput', attributes: 'style="font-size:10px;"padding-left:5px;' }]);
 
         addFeature(featuresList);
         handleInput(['questionSpoof', 'videoSpoof', 'showAnswers', 'nextRecomendation', 'repeatQuestion', 'minuteFarm', 'customBanner', 'rgbLogo']);
-        if (!device.apple){
-            handleInput(['customName', 'customPfp'])
-        }
         handleInput('autoAnswer', checked => checked && !features.questionSpoof && (document.querySelector('[setting-data="features.questionSpoof"]').checked = features.questionSpoof = true));
         handleInput('autoAnswerDelay', value => value && (featureConfigs.autoAnswerDelay = 4 - value));
         handleInput('darkMode', checked => checked ? (DarkReader.setFetchMethod(window.fetch), DarkReader.enable()) : DarkReader.disable());
@@ -231,7 +221,7 @@ function setupMenu() {
 /* Main Functions */ 
 function setupMain(){
     function spoofQuestion() {
-        const phrases = [ "🔥 Get good, get [KhanRick](https://github.com/orickmaxx/khanrick/)!", "🤍 Made by [@orickmaxx](https://www.instagram.com/orickmaxx/)." ];
+        const phrases = [ "🔥 Tenha o Melhor, Tenha [KhanRick](https://github.com/orickmaxx/khanrick/)!", "🤍 Made by [@orickmaxx](https://www.instagram.com/orickmaxx/)." ];
         const originalFetch = window.fetch;
         window.fetch = async function (input, init) {
             let body;
@@ -299,7 +289,7 @@ function setupMain(){
             if(!device.apple){
                 const pfpElement = document.querySelector('.avatar-pic');
                 const nicknameElement = document.querySelector('.user-deets.editable h2');
-                if (nicknameElement) nicknameElement.textContent = featureConfigs.customUsername || user.nickname; 
+                if (nicknameElement) nicknameElement.textContent = user.nickname; 
                 if (featureConfigs.customPfp && pfpElement) { Object.assign(pfpElement, { src: featureConfigs.customPfp, alt: "Not an image URL"} );pfpElement.style.borderRadius="50%"}
             }
         });
@@ -356,7 +346,7 @@ function setupMain(){
         })
     }
     function changeBannerText() {
-        const phrases = [ "[🎅] Feliz Natal.", "[🎅] Khanrick no topo.", "[🎅] 'oi' do @orickmaxx!", "[🎅] Deus eu queria ter o Khanrick.", "[🎅] Tenha o melhor, tenha Khanrick!", "[🎅] Tenha um bom NATAL!" ];
+        const phrases = [ "[🎅] FELIZ NATAL!.", "[🎅] Khanrick no topo.", "[🎅] Biscoito com Leite!", "[🎅] Deixe a Lareira Apagada", "[🎅] Tenha o Melhor, tenha Khanrick!", "[🎅] PAPAI NOEL, É VOCÊ?" ];
         setInterval(() => { 
             const greeting = document.querySelector('.stp-animated-banner h2');
             if (greeting&&features.customBanner) greeting.textContent = phrases[Math.floor(Math.random() * phrases.length)];
