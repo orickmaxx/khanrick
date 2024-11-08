@@ -389,7 +389,7 @@ showSplashScreen();
 loadScript('https://raw.githubusercontent.com/adryd325/oneko.js/refs/heads/main/oneko.js', 'onekoJs')
 .then(() => {
     onekoEl = document.getElementById('oneko'); 
-    onekoEl.style.backgroundImage = "url('https://raw.githubusercontent.com/adryd325/oneko.js/main/oneko.gif')";
+    onekoEl.style.backgroundImage = "url('https://raw.githubusercontent.com/adryd325/oneko.js/refs/heads/main/oneko.gif')";
     onekoEl.style.display = "none";
 });
 loadScript('https://cdn.jsdelivr.net/npm/darkreader@4.9.92/darkreader.min.js', 'darkReaderPlugin')
