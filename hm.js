@@ -1,4 +1,4 @@
-const ver = "V24.04.2024";
+const ver = "1 YEAR?";
 
 let device = {
     mobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone|Mobile|Tablet|Kindle|Silk|PlayBook|BB10/i.test(navigator.userAgent),
@@ -9,7 +9,7 @@ let device = {
 // Disclaimer: user parameters were managed by the main injector.
 // This will not change automatically.
 let user = {
-    username: "Username",
+    username: "@ORICKMAXX",
     nickname: "Nickname",
     UID: 0
 }
@@ -37,7 +37,7 @@ window.features = {
 };
 window.featureConfigs = {
     autoAnswerDelay: 3,
-    customUsername: "",
+    customUsername: "@ORICKMAXX",
     customPfp: ""
 };
 
@@ -356,7 +356,7 @@ function setupMain(){
         })
     }
     function changeBannerText() {
-        const phrases = [ "[🎃] Non Skeetless dude.", "[🎃] Khanrick on top.", "[🎃] Nix said hello!", "[🎃] God i wish i had Khanrick.", "[🎃] Get good get Khanrick!", "[🎃] the old khanrick.space" ];
+        const phrases = [ "[🎅] keep your distance.", "[🎅] Khanrick on top.", "[🎅] Rick said hello!", "[🎅] Deus, eu gostaria de ter Khanrick.", "[🎅] Fique bem, pegue Khanrick!", "[🎅] O velho cheatrick.github.io" ];
         setInterval(() => { 
             const greeting = document.querySelector('.stp-animated-banner h2');
             if (greeting&&features.customBanner) greeting.textContent = phrases[Math.floor(Math.random() * phrases.length)];
@@ -400,7 +400,7 @@ loadScript('https://cdn.jsdelivr.net/npm/darkreader@4.9.92/darkreader.min.js', '
 loadCss('https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css', 'toastifyCss');
 loadScript('https://cdn.jsdelivr.net/npm/toastify-js', 'toastifyPlugin')
 .then(async () => {
-    sendToast("🎃 Khanrick injetado com sucesso!");
+    sendToast("🎅 Khanrick injetado com sucesso!");
     playAudio('https://r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/gcelzszy.wav');
     await delay(500);
     sendToast(`⭐ Bem vindo(a) de volta: ${user.nickname}`);
