@@ -48,7 +48,8 @@ console.log(Object.defineProperties(new Error, { toString: {value() {(new Error)
 
 /* Misc Styles */
 document.head.appendChild(Object.assign(document.createElement("style"),{innerHTML:"@font-face{font-family:'MuseoSans';src:url('https://proxy.khanrick.space/r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/ynddewua.ttf')format('truetype')}" }));
-document.head.appendChild(Object.assign(document.createElement('style'),{innerHTML:"::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #f1f1f1; } ::-webkit-scrollbar-thumb { background: #888; border-radius: 10px; } ::-webkit-scrollbar-thumb:hover { background: #555; }"}));
+document.head.appendChild(Object.assign(document.createElement('style'),{innerHTML:"::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #f1f1f1; } ::-webkit-scrollbar-thumb { background: #888; border-radius: 10px; } ::-webkit-scrollbar-thumb:hover { background: 
+555; }"}));
 document.querySelector("link[rel~='icon']").href = 'https://r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/ukh0rq22.png';
 
 /* Emmiter */
@@ -158,11 +159,12 @@ function setupMenu() {
         });
         dropdownMenu.innerHTML = `
             <style>
-                input[type="checkbox"] {appearance: none; width: 15px; height: 15px; background-color: #3a3a3b;
+                input[type="checkbox"] {appearance: none; width: 15px; height: 15px; background-color: #
+				;
                 border: 1px solid #acacac; border-radius: 3px; margin-right: 5px; cursor: pointer;}
-                input[type="checkbox"]:checked {background-color: #540b8a; border-color: #720fb8;}
+                input[type="checkbox"]:checked {background-color: #89110B; border-color: #FA4437;}
                 input[type="text"], input[type="number"], input[type="range"] {width: calc(100% - 10px); border: 1px solid #343434; 
-                color: white; accent-color: #540b8a; background-color: #540b8a; padding: 3px; border-radius: 3px; background: none;}
+                color: white; accent-color: #89110B; background-color: #89110B; padding: 3px; border-radius: 3px; background: none;}
                 label {display: flex; align-items: center; color: #3a3a3b; padding-top: 3px;}
             </style>
         `;
